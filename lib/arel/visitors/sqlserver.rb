@@ -44,7 +44,7 @@ module Arel
         when String
           x.split(',').map do |s|
             expr = s
-            if s =~ / ((desc)|(asc))$/
+            if s =~ / ((desc)|(asc))$/i
               direction = $1.to_sym
               expr.slice!(expr.size - $1.size, $1.size)
             else
